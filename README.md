@@ -36,7 +36,7 @@ First 3 are in thousandth of a millimeter and the last 3 values are in radians
 robot.get_tcp_position()
 ```
 
-returns 6 floats as a tuple in millimeters
+returns 6 floats as a tuple. First 3 are the vectors in millimeters and last 3 the axis-angle in radials
 
 ## Vision Module
 The vision module contains the Camera class.\
