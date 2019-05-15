@@ -63,7 +63,8 @@ camera.show()
 Note that the this uses the cv2.imshow() function which is not threadsafe.\
 Normal use is for the cv2.imshow() function to be used in the main thread.\
 The viewing of the camera stream must be ended if using another cv2.imshow().\
-If you want to show multiple frames, stitch them together and show them via cv2.imshow()
+If you want to show multiple frames,\
+stitch them together and show them via cv2.imshow() in the main thread.
 
 **Stop viewing the camera stream**
 
@@ -81,3 +82,10 @@ camera.stop()
 
 Terminates the viewing of the camera stream and closes the capture stream.
 
+**Read frame**
+
+```
+camera.read()
+```
+
+Returns the latest frame from the captured stream.
