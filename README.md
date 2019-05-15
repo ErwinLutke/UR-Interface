@@ -1,5 +1,5 @@
 # UR-Interface
-Interface for communicating with the Universal Robot.
+Interface for communicating with the Universal Robot.\
 Contains a Vision module for use with a robot using openCV.
 
 - Python 3.6.7
@@ -21,12 +21,14 @@ robot = URRobot(host)
 ```
 robot.set_tcp((0.05, -0.05, 0.295, 0, 0, 0))
 ```
+First 3 are in thousandth of a millimeter and the last 3 values are in radians
 
 **Move robot**
 
 ```
 robot.movel((0.3, -1.0, 0.2, 0, 3.14, 0))
 ```
+First 3 are in thousandth of a millimeter and the last 3 values are in radians
  
 **Get TCP position**
 
@@ -37,9 +39,9 @@ robot.get_tcp_position()
 returns 6 floats as a tuple in millimeters
 
 ## Vision Module
-The vision module contains the Camera class
-Camera uses 2 threads to poll and view the stream
-It uses a lock to read a single frame for procesing
+The vision module contains the Camera class.\
+Camera uses 2 threads to poll and view the stream.\
+It uses a lock to read a single frame for procesing.
 
 **Capture stream**
 
@@ -49,8 +51,8 @@ camera = Camera(src)
 camera.start()
 ```
 
-src 0 will use the first available camera.
-Anything else will try to find a Gstreamer sink streaming to the terminal
+src 0 will use the first available camera.\
+Anything else will try to find a Gstreamer sink streaming to the terminal.
 
 **View Camera stream**
 
@@ -58,9 +60,10 @@ Anything else will try to find a Gstreamer sink streaming to the terminal
 camera.show()
 ```
 
-Note that the this uses the cv2.imshow() function which is not threadsafe
-Normal use is for the cv2.imshow() function to be used in the main thread.
-The viewing of the camera stream must be ended if using another cv2.imshow().
+Note that the this uses the cv2.imshow() function which is not threadsafe.\
+Normal use is for the cv2.imshow() function to be used in the main thread.\
+The viewing of the camera stream must be ended if using another cv2.imshow().\
+If you want to show multiple frames, stitch them together and show them via cv2.imshow()
 
 **Stop viewing the camera stream**
 
