@@ -21,14 +21,14 @@ robot = URRobot(host)
 ```
 robot.set_tcp((0.05, -0.05, 0.295, 0, 0, 0))
 ```
-First 3 are in thousandth of a millimeter and the last 3 values are in radians
+First 3 are in metre and the last 3 values are in radians
 
 **Move robot**
 
 ```
 robot.movel((0.3, -1.0, 0.2, 0, 3.14, 0))
 ```
-First 3 are in thousandth of a millimeter and the last 3 values are in radians
+First 3 are in metre and the last 3 values are in radians
  
 **Get TCP position**
 
@@ -36,7 +36,7 @@ First 3 are in thousandth of a millimeter and the last 3 values are in radians
 robot.get_tcp_position()
 ```
 
-returns 6 floats as a tuple. First 3 are the vectors in millimeters and last 3 the axis-angle in radials
+returns 6 floats as a tuple. First 3 are the vectors in millimeter and last 3 the axis-angle in radians
 
 ## Vision Module
 The vision module contains the Camera class.\
